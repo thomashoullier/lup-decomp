@@ -6,7 +6,8 @@
    A is a square matrix. Function is in-place on A and returns a pivoting
    vector representing matrix P. See LUP-DECOMPOSITION in Introduction
    to Algorithms.
-   Return A storing L and U, and p the permutation vector."
+   Return A storing L and U, and p the permutation vector.
+   Return nil if A was singular (A can also be destroyed as a side-effect)."
   (let* ((n (mat-ops:nrows A))
          (p (make-array n))
          (piv) ; pivot value
@@ -20,7 +21,7 @@
         (when (> (abs (aref A i k)) piv)
           (psetf piv (abs (aref A i k))
                  kp i)))
-      (when (zerop piv) (error "gauss-partial*: A is singular"))
+      (when (zerop piv) (return-from gauss-partial* nil))
       (rotatef (aref p k) (aref p kp))
       (loop for i from 0 below n do (rotatef (aref A k i) (aref A kp i)))
       (loop for i from (1+ k) below n do

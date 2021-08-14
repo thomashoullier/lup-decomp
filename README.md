@@ -11,6 +11,8 @@ L is unit lower triangular. U is upper triangular. L and U are
 stored compactly in the same matrix lu, with the diagonal of unit
 elements of L omitted.
 
+A must be square. `nil` is returned if A is singular.
+
 The relationship between A, L, U and P is P.A = L.U
 
 The method is Gaussian elimination with partial (row) pivoting,
@@ -18,7 +20,7 @@ as described in [1].
 
 ```common-lisp
 (let ((a #2A((2 0 2 3/5) (3 3 4 -2) (5 5 4 2) (-1 -2 17/5 -1))))
-(gauss-partial a))
+  (gauss-partial a))
 ;;=> #2A((5 5 4 2) (2/5 -2 2/5 -1/5)
 ;;       (-1/5 1/2 4 -1/2) (3/5 0 2/5 -3))
 ;;   #(2 0 3 1)
