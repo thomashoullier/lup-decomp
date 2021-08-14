@@ -1,7 +1,7 @@
 (defsystem lup-decomp
   :name "lup-decomp"
   :author "Thomas HOULLIER"
-  :depends-on ("mat-ops")
+  :depends-on ("mat-ops" "alexandria")
   :components
   ((:module "src"
     :components ((:file "package")
