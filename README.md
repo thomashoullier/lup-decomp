@@ -37,6 +37,9 @@ Launch tests with:
 * `lup-decomp/test`:
   * [rove](https://github.com/fukamachi/rove)
 
+## See also
+* [dgetrf](https://www.netlib.org/lapack/explore-html/dd/d9a/group__double_g_ecomputational_ga0019443faea08275ca60a734d0593e60.html#ga0019443faea08275ca60a734d0593e60)
+
 ## References
 1. T. H. Cormen, C. E. Leiserson, R. L. Rivest, and C. Stein, Introduction to
    Algorithms (MIT press, 2009).
